@@ -5152,6 +5152,13 @@ react-native-git-upgrade@^0.2.7:
     shelljs "^0.7.5"
     yeoman-environment "1.5.3"
 
+react-native-motion@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-motion/-/react-native-motion-1.0.2.tgz#c249ac7e15241f1430b5e97f9c282e16b5107ceb"
+  integrity sha512-rPFHlSdoeafyZexs674tjpkKrLRQ7Hb4rg7zurIgRuS5hky3/hxLOtRU0ImJYNmnw9oMVd9U3fjhDNVVYecJuA==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-navigation@^2.13.1:
   version "2.13.1"
   resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.13.1.tgz#1aefe56a8b92541f110120d2aa079c8c0cdc7213"

@@ -12,6 +12,7 @@
     "react": "16.6.3",
     "react-native": "0.58.6",
     "react-native-git-upgrade": "^0.2.7",
+    "react-native-motion": "^1.0.2",
     "react-native-navigation": "^2.13.1"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SharedElementRenderer } from 'react-native-motion';
 import PropTypes from 'prop-types'
 import {
   StyleSheet,
@@ -8,55 +9,38 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import styles from './style'
+import DogDetails from './DogDetails'
+import AdoptConfirmation from './AdoptConfirmation'
 
 class DogProfile extends Component {
-  static options() {
-    return {
-      topBar: {
-        noBorder: true,
-        drawBehind: true,
-        visible: true,
-        animate: true,
-        transparent: true,
-        translucent: true,
-        background: {
-          color: 'rgba(0, 0, 0, 0)',
-        },
-        backButton: {
-          color: '#ff4e60'
-        },
-      },
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      showAdoptConfirmation: false
     }
   }
 
   render() {
     const { dog } = this.props
     return (
-      <View style={styles.container}>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.dogImage}
-            source={{ uri: dog.imageUrl }}
+      <SharedElementRenderer>
+        <View>
+          <DogDetails
+            dog={dog}
+            onAdopt={() => {
+              this.setState({
+                showAdoptConfirmation: true
+              })
+            }}
+          />
+          <AdoptConfirmation
+            dog={dog}
           />
         </View>
-        <View style={styles.textContent}>
-          <Text style={styles.dogName}>
-            {dog.name}
-          </Text>
-          <Text style={styles.description}>{dog.description}</Text>
-        </View>
         
-        <View style={styles.actionsContainer}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.label}>Foster</Text>
-            
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.label}>Adopt</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      </SharedElementRenderer>
     );
   }
 }
