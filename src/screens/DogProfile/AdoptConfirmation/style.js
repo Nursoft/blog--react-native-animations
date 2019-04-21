@@ -17,7 +17,7 @@ export default StyleSheet.create({
     shadowOpacity: 0.15,
     shadowRadius: 3,
     zIndex: 5,
-    borderRadius: 20
+    //borderRadius: 20
   },
 
   dogImage: {
@@ -36,6 +36,8 @@ export default StyleSheet.create({
   button: {
     backgroundColor: '#ff4e60',
     paddingTop: 10,
+    marginRight: 10,
+    marginLeft: 10,
     paddingBottom: 10,
     borderRadius: 5,
     width: 80,
@@ -62,5 +64,15 @@ export default StyleSheet.create({
     fontWeight: '800',
     fontSize: 16,
     textAlign: 'center'
-  }
+  },
+  controls: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  content: {
+    color: '#414141',
+  },
+  secondaryContentWrapper: {
+    marginTop: 15
+  },
 })

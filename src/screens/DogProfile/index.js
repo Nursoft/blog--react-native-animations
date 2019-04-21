@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { SharedElementRenderer } from 'react-native-motion';
 import PropTypes from 'prop-types'
+import { createSwitchNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation';
+import { FluidNavigator } from 'react-navigation-fluid-transitions'
 import {
   StyleSheet,
   View,
@@ -11,6 +12,13 @@ import {
 
 import DogDetails from './DogDetails'
 import AdoptConfirmation from './AdoptConfirmation'
+
+const Navigator = createAppContainer(FluidNavigator({
+  DogDetails,
+  AdoptConfirmation
+}, {
+  initialRouteName: 'DogDetails'
+}));
 
 class DogProfile extends Component {
 
@@ -25,22 +33,7 @@ class DogProfile extends Component {
   render() {
     const { dog } = this.props
     return (
-      <SharedElementRenderer>
-        <View>
-          <DogDetails
-            dog={dog}
-            onAdopt={() => {
-              this.setState({
-                showAdoptConfirmation: true
-              })
-            }}
-          />
-          <AdoptConfirmation
-            dog={dog}
-          />
-        </View>
-        
-      </SharedElementRenderer>
+      <Navigator screenProps={{ dog: dog }}/>
     );
   }
 }

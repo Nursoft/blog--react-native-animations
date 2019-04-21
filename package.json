@@ -11,9 +11,11 @@
     "prop-types": "^15.7.2",
     "react": "16.6.3",
     "react-native": "0.58.6",
+    "react-native-gesture-handler": "^1.1.0",
     "react-native-git-upgrade": "^0.2.7",
-    "react-native-motion": "^1.0.2",
-    "react-native-navigation": "^2.13.1"
+    "react-native-navigation": "^2.13.1",
+    "react-navigation": "^3.8.1",
+    "react-navigation-fluid-transitions": "^0.3.1"
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",

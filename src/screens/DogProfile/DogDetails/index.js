@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { SharedElement } from 'react-native-motion';
 import PropTypes from 'prop-types'
+import { get } from 'lodash'
+import { Transition } from 'react-navigation-fluid-transitions'
 import {
   StyleSheet,
   View,
@@ -12,25 +13,23 @@ import styles from './style'
 
 class DogDetails extends Component {
   render() {
-    const { dog, onAdopt } = this.props
+    const { dog } = this.props.screenProps
     return (
       <View style={styles.container}>
-        <SharedElement
-          id='source'
-          startOnDestinationDidMount
-        >
+        <Transition shared='dog-photo'>
           <View style={styles.imageContainer}>
             <Image
+              resizeMode='cover'
               style={styles.dogImage}
-              source={{ uri: dog.imageUrl }}
+              source={{ uri: get(dog, 'imageUrl', '') }}
             />
           </View>
-        </SharedElement>
+        </Transition>
         <View style={styles.textContent}>
           <Text style={styles.dogName}>
-            {dog.name}
+            {get(dog, 'name', 'Unknown')}
           </Text>
-          <Text style={styles.description}>{dog.description}</Text>
+          <Text style={styles.description}>{get(dog, 'description', '---')}</Text>
         </View>
         
         <View style={styles.actionsContainer}>
@@ -39,7 +38,7 @@ class DogDetails extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
-            onPress={onAdopt}
+            onPress={() => this.props.navigation.navigate('AdoptConfirmation')}
           >
             <Text style={styles.label}>Adopt</Text>
           </TouchableOpacity>
@@ -50,13 +49,14 @@ class DogDetails extends Component {
 }
 
 DogDetails.propTypes = {
-  dog: PropTypes.shape({
-    name: PropTypes.string,
-    description: PropTypes.string,
-    monthlyExpenses: PropTypes.number,
-    imageUrl: PropTypes.string
-  }).isRequired,
-  onAdopt: PropTypes.func.isRequired
+  screenProps: PropTypes.shape({
+    dog: PropTypes.shape({
+      name: PropTypes.string,
+      description: PropTypes.string,
+      monthlyExpenses: PropTypes.number,
+      imageUrl: PropTypes.string
+    }).isRequired
+  }).isRequired
 }
 
 export default DogDetails
