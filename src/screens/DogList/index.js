@@ -15,7 +15,6 @@ import styles from './style'
 import dogList from './dogs'
 
 class DogListScreen extends Component {
-
   static options() {
     return {
       topBar: {
@@ -54,8 +53,6 @@ class DogListScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.listTitle}>Choose a dog to foster!</Text>
-
         <FlatList
           style={styles.listContainer}
           keyExtractor={item => item.id}

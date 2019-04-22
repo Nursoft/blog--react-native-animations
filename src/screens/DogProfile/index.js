@@ -12,8 +12,10 @@ import {
 
 import DogDetails from './DogDetails'
 import AdoptConfirmation from './AdoptConfirmation'
+import AdoptionCompleted from './AdoptionCompleted'
 
 const Navigator = createAppContainer(FluidNavigator({
+  AdoptionCompleted,
   DogDetails,
   AdoptConfirmation
 }, {

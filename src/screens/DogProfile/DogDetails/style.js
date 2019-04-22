@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: '#ffffff',
     height: '100%',
   },
   imageContainer: {
@@ -31,11 +31,12 @@ export default StyleSheet.create({
     marginBottom: 20,
     fontSize: 26,
     fontWeight: '600',
-    color: '#ff4e60',
+    color: '#B07156',
   },
 
   description: {
     fontSize: 16,
+    color: '#333333'
   },
 
   actionsContainer: {
@@ -48,12 +49,17 @@ export default StyleSheet.create({
   }, 
 
   button: {
-    backgroundColor: '#ff4e60',
-    paddingLeft: 40,
-    paddingRight: 40,
+    backgroundColor: '#F9A03F',
+    flex: 1,
+    alignItems: 'center',
     paddingTop: 10,
+    marginLeft: 10,
+    marginRight: 10,
     paddingBottom: 10,
-    borderRadius: 5,
+    shadowColor: '#808080',
+    shadowOffset: { height: 0, width: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 1,
   },
   label: {
     color: 'white',

@@ -30,13 +30,13 @@ export default StyleSheet.create({
   dogName: {
     fontSize: 16,
     fontWeight: '500',
-    color: '#ff4e60',
+    color: '#B07156',
     marginBottom: 3,
   },
 
   dogAge: {
     fontSize: 14,
-    color: '#353535',
+    color: '#333333',
     fontWeight: '500',
     marginBottom: 5
   },

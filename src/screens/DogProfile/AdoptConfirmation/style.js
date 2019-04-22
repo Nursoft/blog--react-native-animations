@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: '#FFFFFF',
     height: '100%',
     alignItems: 'center',
     paddingTop: 40
@@ -13,9 +13,9 @@ export default StyleSheet.create({
     height: 200,
     backgroundColor: 'gray',
     shadowColor: '#808080',
-    shadowOffset: { height: 4, width: 0 },
-    shadowOpacity: 0.15,
-    shadowRadius: 3,
+    shadowOffset: { height: 0, width: 0 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
     zIndex: 5,
     //borderRadius: 20
   },
@@ -30,26 +30,38 @@ export default StyleSheet.create({
     paddingBottom: 8,
     textAlign: 'center',
     fontWeight: '600',
-    color: '#ff4e60',
+    color: '#B07156',
   },
 
   button: {
-    backgroundColor: '#ff4e60',
-    paddingTop: 10,
-    marginRight: 10,
-    marginLeft: 10,
-    paddingBottom: 10,
-    borderRadius: 5,
-    width: 80,
+    backgroundColor: '#F9A03F',
     textAlign: 'center',
-    marginTop: 50,
+    flex: 1,
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingBottom: 10,
+    shadowColor: '#808080',
+    shadowOffset: { height: 0, width: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 1,
+  },
+
+  cancelButton: {
+    paddingTop: 10,
+    paddingBottom: 0,
+    height: 32,
+    flex: 1,
+    textAlign: 'center'
   },
 
   adoptCard: {
     alignItems: 'center',
     width: '80%',
     backgroundColor: 'white',
-    
+    shadowColor: '#808080',
+    shadowOffset: { height: 0, width: 0 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
     padding: 20,
     paddingTop: 30,
     paddingBottom: 30,
@@ -65,12 +77,20 @@ export default StyleSheet.create({
     fontSize: 16,
     textAlign: 'center'
   },
+
+  cancelLabel: {
+    color: '#F9A03F',
+    fontWeight: '800',
+    fontSize: 16,
+    textAlign: 'center',
+    textDecorationLine: 'underline'
+  },
   controls: {
+    marginTop: 40,
     flexDirection: 'row',
-    justifyContent: 'space-between'
   },
   content: {
-    color: '#414141',
+    color: '#333333',
   },
   secondaryContentWrapper: {
     marginTop: 15

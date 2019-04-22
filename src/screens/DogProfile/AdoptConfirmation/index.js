@@ -29,7 +29,7 @@ class AdoptConfirmation extends Component {
         <View style={styles.adoptCard}>
           <Text style={styles.title}>Awesome!</Text>
 
-          <Text style={styles.content}>Adopting a dog is a lot of responsability. We work hard to make sure all the animals in our shelter find the best suitable home for them.</Text>
+          <Text style={styles.content}>Adopting a dog is a lot of responsability and we work hard to make sure all the animals in our shelter find the best suitable home for them.</Text>
           
           <View style={styles.secondaryContentWrapper}>
             <Text style={styles.content}>If you aren't sure you can give <Text style={{ fontWeight: 'bold' }}>{dog.name}</Text> a good home for the rest of its life, then please hit cancel</Text>
@@ -38,14 +38,24 @@ class AdoptConfirmation extends Component {
             style={styles.controls}
             
           >
-            <View style={styles.button}><Text style={styles.label}>Adopt</Text></View>
             <TouchableOpacity
-              style={styles.button}
+              style={styles.cancelButton}
               onPress={() => {
                 this.props.navigation.navigate('DogDetails')
               }}
             >
-              <Text style={styles.label}>Cancel</Text>
+              <Text style={styles.cancelLabel}>Cancel</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                this.props.navigation.navigate('AdoptionCompleted')
+              }}
+            >
+              <Text style={styles.label}>
+                Adopt
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
