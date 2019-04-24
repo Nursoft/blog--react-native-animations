@@ -33,7 +33,10 @@ class DogDetails extends Component {
         </View>
         
         <View style={styles.actionsContainer}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate('FosterSelection')}
+          >
             <Text style={styles.label}>Foster</Text>
           </TouchableOpacity>
           <TouchableOpacity

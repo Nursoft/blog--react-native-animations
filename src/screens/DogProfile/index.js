@@ -13,16 +13,28 @@ import {
 import DogDetails from './DogDetails'
 import AdoptConfirmation from './AdoptConfirmation'
 import AdoptionCompleted from './AdoptionCompleted'
+import FosterSelection from './FosterSelection'
 
 const Navigator = createAppContainer(FluidNavigator({
   AdoptionCompleted,
   DogDetails,
-  AdoptConfirmation
+  AdoptConfirmation,
+  FosterSelection
 }, {
   initialRouteName: 'DogDetails'
 }));
 
 class DogProfile extends Component {
+
+  static options() {
+    return {
+      topBar: {
+        backButton: {
+          color: '#F9A03F'
+        },
+      },
+    };
+  }
 
   constructor(props) {
     super(props)

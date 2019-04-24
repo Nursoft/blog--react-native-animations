@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "lottie": "^0.0.1",
     "lottie-react-native": "^2.6.1",
     "prop-types": "^15.7.2",
     "react": "16.6.3",
@@ -14,6 +15,7 @@
     "react-native-gesture-handler": "^1.1.0",
     "react-native-git-upgrade": "^0.2.7",
     "react-native-navigation": "^2.13.1",
+    "react-native-pose": "^0.9.0",
     "react-navigation": "^3.8.1",
     "react-navigation-fluid-transitions": "^0.3.1"
   },
