@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { get } from 'lodash'
 import PropTypes from 'prop-types'
+
+// This is important to freeze elements during transitions
 import { Transition } from 'react-navigation-fluid-transitions'
 import {
   View,
@@ -14,8 +16,16 @@ import styles from './style'
 class AdoptConfirmation extends Component {
   render () {
     const { dog } = this.props.screenProps
+
+    // A simple confirmation dialog
     return (
       <View style={styles.container}>
+        {/*
+          Same as with DogDetails, this
+          element will freeze in place and
+          transition to the new element's
+          style.
+        */}
         <Transition shared='dog-photo' appear='horizontal'>
           <View style={styles.imageContainer}>
             <Image

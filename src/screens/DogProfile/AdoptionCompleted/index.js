@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+
+// Import our lottieview so it can be shown
 import LottieView from 'lottie-react-native';
 import dogAnimation from '../../../assets/dog.json'
 import checkImage from '../../../assets/check.png'
@@ -28,6 +30,14 @@ class AdoptionCompleted extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.dogAnimationContainer}>
+          {/*
+            It is a simple as adding the LottieView
+            element specifying your JSON asset
+            for it to show on screen.
+
+            Check more available props at Lottie's
+            documentation
+          */}          
           <LottieView
             style={styles.dogAnimation}
             source={dogAnimation}

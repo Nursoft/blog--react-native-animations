@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { get } from 'lodash'
+
+// This is important to freeze elements during transitions
 import { Transition } from 'react-navigation-fluid-transitions'
 import {
   StyleSheet,
@@ -9,13 +11,28 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+
 import styles from './style'
 
 class DogDetails extends Component {
   render() {
     const { dog } = this.props.screenProps
+
+    // We pretty much render the same content
+    // as before, except for the tiny modification
+    // of adding the Transition element, in which
+    // we specify the "shared" prop
     return (
       <View style={styles.container}>
+        {/*
+          The "shared" prop tells fluid transitions
+          to make this element remain on screen.
+
+          If there is another element with the
+          same "shared" prop, the element will
+          transition to the new element's
+          style, such as scale and position.
+        */}
         <Transition shared='dog-photo'>
           <View style={styles.imageContainer}>
             <Image
